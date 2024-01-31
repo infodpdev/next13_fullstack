@@ -17,6 +17,10 @@ const getData = async () => {
 const Show = async () => {
   const { data } = await getData();
 
+  if(!data) {
+    return <div>No hay datos disponibles</div>;
+  }
+
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
       {data.map((element) => (

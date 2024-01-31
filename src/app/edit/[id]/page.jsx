@@ -10,8 +10,10 @@ const getDataById = async (id) => {
       throw new Error("Failed to update.");
     }
     return response.json();
+    return { data };
   } catch (error) {
     console.log("Error : ", error);
+    return { data: null };
   }
 };
 
